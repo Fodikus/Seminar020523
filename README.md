@@ -96,5 +96,40 @@ Console.WriteLine($"Последовательность чисел после �
 
 # Гипотеза Гольдбаха(https://acmp.ru/asp/do/index.asp?main=task&id_course=1&id_section=6&id_topic=117&id_problem=723)
 ```
+Console.Clear();
+Console.Write("Введите четное число N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+while (((n < 4) || (n > 999)) || (n % 2==1))
+{
+    Console.WriteLine($"Вы ошиблись!\nВведите четное число больше 3-х или больше 998! ");
+    n = Convert.ToInt32(Console.ReadLine());
+}
 
+bool f(int N)
+{
+    bool flag = true;
+    for (int j = 2; j < N - 1; j++)
+        if (N % j == 0)
+            flag = false;
+    return flag;
+}
+
+bool check  = true;
+int n1 = 0;
+int n2 = 0;
+int i = 1;
+while ((i < n / 2 + 1) && (check))
+{
+    if(f(i) && f(n - i))
+    {
+        n1 = i;
+        n2 = n - i;
+
+        if (n1 > 1)
+            check = false;
+    } 
+    i++;
+}
+
+Console.WriteLine($"Результат: {n1}, {n2} ");
 ```
