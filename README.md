@@ -87,7 +87,7 @@ for (int i = 0; i < n; i++)
 }
 
 int[] result = new int[n];
-for(int i = 0; i < n; ++i)
+for(int i = 0; i < n; i++)
     result[i] = array[(i - k + n) % n];
 
 Console.WriteLine($"Первоначальная последовательность чисел: [{string.Join(", ", array)}] ");
