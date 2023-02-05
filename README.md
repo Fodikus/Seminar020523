@@ -73,7 +73,25 @@ Console.WriteLine($"Количество учеников выше Пети: {re
 
 # Суперсдвиг(https://acmp.ru/asp/do/index.asp?main=task&id_course=1&id_section=5&id_topic=114&id_problem=702)
 ```
+Console.Clear();
+Console.Write("Введите количество чисел N: ");
+int n = Convert.ToInt32(Console.ReadLine());
 
+Console.Write("Введите число K: ");
+int k = Convert.ToInt32(Console.ReadLine());
+
+int[] array = new int[n];
+for (int i = 0; i < n; i++)
+{
+    array[i] = new Random().Next(0, 9); 
+}
+
+int[] result = new int[n];
+for(int i = 0; i < n; ++i)
+    result[i] = array[(i - k + n) % n];
+
+Console.WriteLine($"Первоначальная последовательность чисел: [{string.Join(", ", array)}] ");
+Console.WriteLine($"Последовательность чисел после перестановки: [{string.Join(", ", result)}] ");
 ```
 
 # Гипотеза Гольдбаха(https://acmp.ru/asp/do/index.asp?main=task&id_course=1&id_section=6&id_topic=117&id_problem=723)
