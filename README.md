@@ -82,9 +82,7 @@ int k = Convert.ToInt32(Console.ReadLine());
 
 int[] array = new int[n];
 for (int i = 0; i < n; i++)
-{
     array[i] = new Random().Next(0, 9); 
-}
 
 int[] result = new int[n];
 for(int i = 0; i < n; i++)
